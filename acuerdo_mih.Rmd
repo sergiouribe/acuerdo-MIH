@@ -1,0 +1,24 @@
+---
+title: "Calibracion"
+output: html_notebook
+---
+```{r eval=FALSE}
+library(tidyverse)
+library(stringr)
+library(irr)
+```
+
+
+# Calibración 2017-08-31
+
+```{r datos 31 ago 2017}
+agosto31 <- read_csv("calibracion20170831.csv")
+
+head(agosto31)
+```
+
+```{r}
+table(agosto31$`MIH observador 1`, agosto31$`MIH observador 2`)
+kappa2(agosto31[,c(2,4)], "unweighted")
+```
+
