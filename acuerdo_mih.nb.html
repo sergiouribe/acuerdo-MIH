@@ -207,7 +207,21 @@ library(irr)</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<div id="kappa-por-acuerdo-sino" class="section level2">
+<h2>Kappa por acuerdo SI/NO</h2>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGFibGUoYWdvc3RvMzEkYE1JSCBvYnNlcnZhZG9yIDFgLCBhZ29zdG8zMSRgTUlIIG9ic2VydmFkb3IgMmApXG5cbmBgYCJ9 -->
+<pre class="r"><code>table(agosto31$`MIH observador 1`, agosto31$`MIH observador 2`)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgIFxuICAgICBOTyBTSVxuICBOTyAgMiAgNlxuICBTSSAgMiAyMlxuIn0= -->
+<pre><code>    
+     NO SI
+  NO  2  6
+  SI  2 22</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxua2FwcGEyKGFnb3N0bzMxWyxjKDIsNCldLCBcInVud2VpZ2h0ZWRcIilcblxuYGBgIn0= -->
 <pre class="r"><code>kappa2(agosto31[,c(2,4)], &quot;unweighted&quot;)
@@ -225,10 +239,46 @@ library(irr)</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+<div id="kappa-por-categoria" class="section level2">
+<h2>Kappa por categoría</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGFibGUoYWdvc3RvMzEkYENyaXRlcmlvIG9ic2VydmFkb3IgMWAsIGFnb3N0bzMxJGBDcml0ZXJpbyBvYnNlcnZhZG9yIDJgKVxuXG5gYGAifQ== -->
+<pre class="r"><code>table(agosto31$`Criterio observador 1`, agosto31$`Criterio observador 2`)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgXG4gICAgMCAxIDIgM1xuICAwIDIgMyAxIDJcbiAgMSAxIDYgMyAxXG4gIDIgMCAyIDAgMVxuICAzIDEgMCAwIDlcbiJ9 -->
+<pre><code>   
+    0 1 2 3
+  0 2 3 1 2
+  1 1 6 3 1
+  2 0 2 0 1
+  3 1 0 0 9</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxua2FwcGEyKGFnb3N0bzMxWyxjKDMsNSldLCBcInVud2VpZ2h0ZWRcIilcblxuYGBgIn0= -->
+<pre class="r"><code>kappa2(agosto31[,c(3,5)], &quot;unweighted&quot;)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIENvaGVuJ3MgS2FwcGEgZm9yIDIgUmF0ZXJzIChXZWlnaHRzOiB1bndlaWdodGVkKVxuXG4gU3ViamVjdHMgPSAzMiBcbiAgIFJhdGVycyA9IDIgXG4gICAgS2FwcGEgPSAwLjM0MiBcblxuICAgICAgICB6ID0gMy4yIFxuICBwLXZhbHVlID0gMC4wMDEzNiBcbiJ9 -->
+<pre><code> Cohen's Kappa for 2 Raters (Weights: unweighted)
+
+ Subjects = 32 
+   Raters = 2 
+    Kappa = 0.342 
+
+        z = 3.2 
+  p-value = 0.00136 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiQ2FsaWJyYWNpb24iCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KYGBge3IgZXZhbD1GQUxTRX0KbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoc3RyaW5ncikKbGlicmFyeShpcnIpCmBgYAoKCiMgQ2FsaWJyYWNpw7NuIDIwMTctMDgtMzEKCmBgYHtyIGRhdG9zIDMxIGFnbyAyMDE3fQphZ29zdG8zMSA8LSByZWFkX2NzdigiY2FsaWJyYWNpb24yMDE3MDgzMS5jc3YiKQoKaGVhZChhZ29zdG8zMSkKYGBgCgpgYGB7cn0KdGFibGUoYWdvc3RvMzEkYE1JSCBvYnNlcnZhZG9yIDFgLCBhZ29zdG8zMSRgTUlIIG9ic2VydmFkb3IgMmApCmthcHBhMihhZ29zdG8zMVssYygyLDQpXSwgInVud2VpZ2h0ZWQiKQpgYGAKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQ2FsaWJyYWNpb24iCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KYGBge3IgZXZhbD1GQUxTRX0KbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoc3RyaW5ncikKbGlicmFyeShpcnIpCmBgYAoKCiMgQ2FsaWJyYWNpw7NuIDIwMTctMDgtMzEKCmBgYHtyIGRhdG9zIDMxIGFnbyAyMDE3fQphZ29zdG8zMSA8LSByZWFkX2NzdigiY2FsaWJyYWNpb24yMDE3MDgzMS5jc3YiKQoKaGVhZChhZ29zdG8zMSkKYGBgCiMjIEthcHBhIHBvciBhY3VlcmRvIFNJL05PCmBgYHtyIHRhYmxhIGFjdWVyZG99CnRhYmxlKGFnb3N0bzMxJGBNSUggb2JzZXJ2YWRvciAxYCwgYWdvc3RvMzEkYE1JSCBvYnNlcnZhZG9yIDJgKQpgYGAKYGBge3Iga2FwcGEgYWN1ZXJkb30Ka2FwcGEyKGFnb3N0bzMxWyxjKDIsNCldLCAidW53ZWlnaHRlZCIpCgpgYGAKCiMjIEthcHBhIHBvciBjYXRlZ29yw61hCmBgYHtyIHRhYmxhIGNhdGVnb3JpYX0KCnRhYmxlKGFnb3N0bzMxJGBDcml0ZXJpbyBvYnNlcnZhZG9yIDFgLCBhZ29zdG8zMSRgQ3JpdGVyaW8gb2JzZXJ2YWRvciAyYCkKYGBgCmBgYHtyIGthcHBhIGNhdGVnb3JpYX0Ka2FwcGEyKGFnb3N0bzMxWyxjKDMsNSldLCAidW53ZWlnaHRlZCIpCgpgYGAKCg==</div>
 
 
 

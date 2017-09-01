@@ -16,9 +16,22 @@ agosto31 <- read_csv("calibracion20170831.csv")
 
 head(agosto31)
 ```
-
-```{r}
+## Kappa por acuerdo SI/NO
+```{r tabla acuerdo}
 table(agosto31$`MIH observador 1`, agosto31$`MIH observador 2`)
+```
+```{r kappa acuerdo}
 kappa2(agosto31[,c(2,4)], "unweighted")
+
+```
+
+## Kappa por categoría
+```{r tabla categoria}
+
+table(agosto31$`Criterio observador 1`, agosto31$`Criterio observador 2`)
+```
+```{r kappa categoria}
+kappa2(agosto31[,c(3,5)], "unweighted")
+
 ```
 
