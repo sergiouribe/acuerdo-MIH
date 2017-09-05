@@ -1,10 +1,12 @@
 ---
-title: "Calibracion"
-output: html_notebook
+title: "Calibracion MIH"
+output:
+  html_document:
+    df_print: paged
 ---
-```{r eval=FALSE}
+```{r, echo=FALSE}
+library(psych)
 library(tidyverse)
-library(stringr)
 library(irr)
 ```
 
@@ -14,24 +16,37 @@ library(irr)
 ```{r datos 31 ago 2017}
 agosto31 <- read_csv("calibracion20170831.csv")
 
-head(agosto31)
+# agosto31[,c(1,2,4)] <- lapply(agosto31, as.factor)
+
+agosto31
+
 ```
+
 ## Kappa por acuerdo SI/NO
-```{r tabla acuerdo}
+```{r}
 table(agosto31$`MIH observador 1`, agosto31$`MIH observador 2`)
 ```
-```{r kappa acuerdo}
+```{r}
 kappa2(agosto31[,c(2,4)], "unweighted")
-
 ```
+
+```{r}
+mosaicplot(table(agosto31$`MIH observador 1`, agosto31$`MIH observador 2`), shade = T)
+```
+
 
 ## Kappa por categoría
-```{r tabla categoria}
 
+```{r}
 table(agosto31$`Criterio observador 1`, agosto31$`Criterio observador 2`)
+
 ```
-```{r kappa categoria}
+
+```{r}
 kappa2(agosto31[,c(3,5)], "unweighted")
 
+```
+```{r}
+mosaicplot(table(agosto31$`Criterio observador 1`, agosto31$`Criterio observador 2`), shade = T)
 ```
 

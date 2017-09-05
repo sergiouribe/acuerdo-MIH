@@ -1,0 +1,10 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/303506/4398fcb4086d411eba397f15b6014176
+bundleId: https://api.rpubs.com/api/v1/document/303506/4398fcb4086d411eba397f15b6014176
+url: http://rpubs.com/sergiouribe/303506
+when: 1504614037.92584
